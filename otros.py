@@ -6,3 +6,4 @@ for i in range(2,4):
     imagen_png = Image.open(numero_formateado)
     imagen_png.save("001" + ".webp", 'webp')
     print(f"Convertido: {numero_formateado}")
+#LuchoPingon
