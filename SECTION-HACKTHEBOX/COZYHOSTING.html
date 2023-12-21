@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/codigo.css">
+
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main"> HackTheBox Write-Up - CozyHosting </h1>
+
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/001.webp" alt="Imagen HACKTHEBOX" />
+    </div>
+    <p> COZYHOSTING es una de las maquinas activas actualmente en la plataforma HackTheBox. Para obtener una shell aprovechamos
+        una coockie de sesion y luego obtuvimos RCE dentro del admin y escalamos privilegios usando el binario de ssh.
+    </p>
+
+    <h1 class="titulo"> ENUMERACION </h1>
+
+    <p>Realizamos un escaneo en búsqueda de puertos abiertos. </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/002.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>Usamos la misma herramienta para obtener las version y servicios que corren en los puertos 22 y 80.</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/003.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>Revisamos la web poniendo la ip que nos concedio hackthebox y vemos lo siguiente. 
+    </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/004.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p> Al hacer un escaneo de directorios encontramos varios, como un login , actuator/sessions , /admin y muchas mas pero esas dos son
+        las mas importantes ahora que nos ayudara a obtener una shell
+    </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/005.webp" alt="Imagen hacking wifi" />
+      </div>
+
+    <p> Tal como dije tenemos un login un actuator/sessions asi que primero tendremos que ingresar a ese directorio y lo 
+        que vemos es un token , talvez nos ayude para algo,asi que porque no usarlo para permitirnos logearnos?. </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/006.webp" alt="Imagen hacking wifi" />
+    </div>
+
+   <h1>INTRUSIÒN</h1>
+
+    <p> Usando la herramienta cookie editor tal como esta la imagen dentro del JSESSIONID ponemos lo que encontramos ,pero
+        antes para que nos aparesca ese archivo ,tendremos que rellenar con cualquier usuario y contraseña.
+    </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/007.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p> Despues de haberlo correctamente podremos ingresar al directorio admin y vemos esto...</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/008.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p> Bajamos un poco mas y vemos algo muy interesante que talvez podamos injectar comandos.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/009.webp" alt="Imagen hacking wifi" />
+      </div>
+    
+
+
+    <p> Asi que utilizamos la herramienta de burpsuite para poder interceptar la peticion y rellenamos con algo simple primero
+        para ver como reaccion la pagina.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0010.webp" alt="Imagen hacking wifi" />
+      </div>
+
+
+
+    <p> Ya que ahora sabemos como reacciona la pagina , injectamos un payload para poner obtener una shell tal como esta la imagen
+        reemplazando con su ip y puerto de escucha .</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0011.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>No  sin antes crear nuestra reverse shell en este caso le llamamos exploit.sh y lo que contiene un codigo muy simple,
+        asi que solo nos lo creamos y creamos un servidor en python para poder compartir el archivo y luego ejecutarlo.
+    </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0012.webp" alt="Imagen hacking wifi" />
+      </div>
+    
+      <p> Asi que despues de dejar el paquete pasar , obtenemos la shell que tanto queriamos y volvemos ver algo interesante
+        asi que nos lo descargamos en nuestra maquina atacante para saber que es lo que contiene.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0013.webp" alt="Imagen hacking wifi" />
+      </div>
+
+
+      <p>Descomprimimos el archivo utilizando unzip y ya que existian demasiado archivos y quisimos saltearnos la parte de buscar
+        uno por uno usamos <code class="code-command"> egrep "password" -iR </code> para poder filtrar donde diga contraseñas y encontramos una contraseña
+        que talvez sea de una base de datos.
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0014.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <p> Ya que tenemos una contraseña , porque no probar conectarnos a la base de datos y revisar si hay alguna 
+        contraseña filtrada.
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0015.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <p> Despues de ingresar hacemos lo siguiente comandos para llegar hasta la tabla de usuarios y observamos que la contraseña
+        esta pasado a hash ,asi que nos la copiamos a nuestro equipo. 
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0016.webp" alt="Imagen hacking wifi" />
+      </div>
+      
+      <p> Despues de tenerlo en nuestro equipo lo desencryptamos con la herramienta john the ripper usando un lista de palabras
+        del archivo rockyou.txt y nos consiguio una contraseña , que no fue tan robusta y porque no probar suerte usando para
+        conectarnos via ssh?.
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/hash.png" alt="Imagen hacking wifi" />
+      </div>
+      
+
+
+      <p> Asi que nos conectamos via ssh utilizando la contraseña que recolectamos anteriormente y funciono correctamente.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0017.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <H1>ESCALACION DE PRIVILEGIOS </H1>
+
+      <p>  Y probamos con  <code class="code-command"> sudo -l </code> y ponemos la contraseña que nos conectamos por ssh 
+        y vemos que hay un binario ssh .</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0018.webp" alt="Imagen hacking wifi" />
+      </div>
+
+
+      <p> Asi que buscando encontramos esto GTFOBins y asi que probamos suerte.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0019.webp" alt="Imagen hacking wifi" />
+      </div>
+
+        <p> Y funciono correctamene podimos escalar privilegios gracias al binario ssh ,ya ahora podremos visualizar la flag de root.
+        </p>
+        <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/COZYHOSTING/0020.webp" alt="Imagen hacking wifi" />
+        </div>
+        <h1>Felicidades acabas de vulnerar la maquina  COZYHOSTING!</H1>
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+  

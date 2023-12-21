@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+					
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main">Ataque a redes sin clientes</h1>
+
+    <p>Un "ataque a redes WiFi sin clientes" es un término amplio que se utiliza para describir ataques dirigidos a la infraestructura y la seguridad de una red WiFi, incluso cuando no hay dispositivos clientes conectados activamente a esa red. Estos ataques se centran en comprometer el punto de acceso (router Wi-Fi) o la red misma, en lugar de atacar directamente los dispositivos que se conectan a la red</p>
+    <p>El tipo de ataque que haremos se centra en obtener hashes de los AP (Puntos de acceso) desde hcxdumptool.</p>
+
+    <p> <code class="code-command">hcxdumptool -i wlan0mon -w Captura --enable_status=1  </code> </p>
+
+    <p> <code class="code-command"> hcxdumptool </code> Es el nombre de la herramienta que estás ejecutando.</p>
+    <p> <code class="code-command"> -i wlan0mon </code> Esta parte del comando especifica la interfaz de red que se utilizará para capturar paquetes.</p>
+    <p> <code class="code-command"> -w Captura </code>Aquí se establece el nombre del archivo de salida en el que se guardarán los datos capturados (handshakes ). En este caso, el nombre del archivo será "Captura". </p>
+    <p> <code class="code-command"> --enable_status=1 </code> Este parámetro activa el modo de visualización de estado en la salida de la herramienta. Establecerlo en "1" significa que se mostrarán mensajes de estado en la pantalla mientras se ejecuta la herramienta, lo que proporcionará información sobre el progreso de la captura.</p>
+
+    <h3 class="h3-importante">Obtener y Romper hashes</h3>
+    <p> <code class="code-command"> hcxpcaptool -z myHashes Captura </code> </p>
+
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="assets/images/articulos/ataque-a-redes-sin-clientes/001.webp" alt="Imagen hacking wifi" />
+    </div>
+    <p>Como podemos ver obtuvimos 4 hashes</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="assets/images/articulos/ataque-a-redes-sin-clientes/002.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p>Procedemos a crackearlos </p>
+    <p class="p-verde">Usando john</p>
+    <p> <code class="code-command"> john --wordlist=../wifi/kaonashi14M.txt myHashes </code> </p>
+    <p class="p-verde">Usando hascat</p>
+    <p> <code class="code-command">hashcat -m 16800 -a 0 myHashes worlistpasswords.txt  </code> </p>
+
+
+  <br>    <br>
+
+
+
+
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

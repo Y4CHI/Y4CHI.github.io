@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+	
+				</ul>
+			</li>
+			<li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+					
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main">Fuerza bruta con Aircrack hacia hashes (handshakes)</h1>
+
+    <p>La fuerza bruta con Aircrack hacia handshakes es una técnica utilizada para intentar descifrar contraseñas en una red Wi-Fi protegida mediante un ataque de fuerza bruta, específicamente orientado a los hashes de los handshakes capturados. Esto se hace con la intención de obtener la contraseña de la red Wi-Fi</p>
+    <p>El proceso general de este tipo de ataque involucra los siguientes pasos:</p>
+
+    <p class="p-verde">Captura de un handshake:</p>
+    <p>Un atacante primero debe capturar un handshake válido de la red Wi-Fi a la que desea acceder. El handshake se obtiene cuando un dispositivo legítimo se autentica o se reconecta a la red y se registra en un archivo de captura.</p>
+    <p class="p-verde">Extracción del hash:   </p>
+    <p>A partir del handshake capturado, se extrae el hash de la contraseña que el atacante desea descifrar. El hash es una representación criptográfica de la contraseña original.</p>
+    <p class="p-verde"> Ataque de fuerza bruta:  </p>
+    <p>El atacante utiliza herramientas como Aircrack-ng para realizar un ataque de fuerza bruta contra el hash de la contraseña. Esto implica probar repetidamente diferentes contraseñas o combinaciones de caracteres hasta encontrar una que coincida con el hash.</p>
+    <p class="p-verde">Éxito o fracaso:</p>
+    <p>Si el ataque de fuerza bruta tiene éxito y se encuentra una contraseña que coincida con el hash, el atacante habrá obtenido acceso a la red Wi-Fi. Si el ataque no tiene éxito, el atacante puede intentar con otras contraseñas hasta encontrar la correcta o decidir abandonar el ataque.</p>
+
+    <p>Comencemos</p>
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="assets/images/articulos/fuerza-bruta-con-aircrack/001.webp" alt="Imagen hacking wifi" />
+    </div>
+
+    <p> <code class="code-command">aircrack-ng  </code> Es la herramienta a usar. </p>
+    <p> <code class="code-command"> -w </code> Es el parametro que sirve para especificar el archivo con la lista de contraseñas a usar.</p>
+    <p> <code class="code-command"> captura-01.cap </code> Es el archivo del handshake </p>
+
+    <div class="imagenes-blog">
+      <img class="img-contenido-blog" src="assets/images/articulos/fuerza-bruta-con-aircrack/002.webp" alt="Imagen hacking wifi" />
+    </div>
+
+  <p>Una vez que la herramienta llegue al 100% y hayamos tenido éxito, nos mostrará la contraseña o no, pero podemos intentar con múltiples listas de contraseñas hasta dar con la adecuada</p>
+  <br>    <br>
+
+
+
+
+</main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

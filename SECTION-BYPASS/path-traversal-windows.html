@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Wren - Perosonal Blog Website </title>
+  <meta name="title" content="Wren - Perosonal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+
+  <!--codigo sintax-->
+
+  
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/codigo.css">
+
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+	
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+
+    <h1 id="h1-main">Path Traversal en Windows</h1>
+    <p>En el vasto mundo de la ciberseguridad, es esencial comprender las amenazas que pueden comprometer la integridad de nuestros sistemas. Uno de estos peligros, conocido como "Path Traversal," es una técnica sigilosa que puede abrir las puertas de nuestro sistema Windows a los atacantes. En este artículo, exploraremos en qué consiste el Path Traversal, cómo funciona en el entorno de Windows. Acompáñanos en este viaje por las rutas peligrosas del ciberespacio.</p>
+
+    <p>En sistemas operativos Linux sabemos que las rutas son conformadas por <code class="code-command">  / </code> (slash o barra), en este articulo usaremos el termino barra para referirnios a <code class="code-command">  / </code>, pero en sistemas Windows las rutas estan conformadas por barras invertidas <code class="code-command"> \  </code> .</p>
+    <p>Linux: </p>
+    <p><code class="code-command"> /home/usuario  </code></p>
+    <p>Windows:</p>
+    <p><code class="code-command">C:\Users\black </code></p>
+    <p>Durante un ataque de Path Traversal en linux usamos la siguiente ruta para validar si es vulnerable: </p>
+    <p><code class="code-command">/etc/passwd   </code></p> 
+    <p>Pero en windows los archivos a los cuales podemos apuntar son:  </p>
+    <p><code class="code-command">  C:\Windows\System32\drivers\etc\network.txt </code></p>
+    <p><code class="code-command">  C:\ProgramData\ssh\sshd_config </code></p>
+
+    <p><code class="code-command">  C:\Windows\System32\drivers\etc\hosts  </code></p>
+    <p><code class="code-command">  C:\xampp\apache\conf\httpd.conf </code></p>
+    <p>Este vector no está disponible en el entorno de Windows y lamentablemente, no existe una solución directa para esta situación. Además, identificar archivos que contienen información sensible en Windows puede ser un desafío, ya que no es sencillo acceder al contenido de los directorios. Por lo tanto, para descubrir archivos que contengan datos confidenciales, debemos llevar a cabo un análisis exhaustivo de la aplicación web y recopilar información sobre el servidor web, el marco de trabajo utilizado y el lenguaje de programación empleado.</p>
+
+    <p>Bien una vez identificada una aplicativo web usado podemos buscar su documenetación con la finalidad de encontrar las rutas de archivos de sensibles, configuraciones, etc.</p>
+    <p>Como anterior mente vimos para sistemas linux usamos <code class="code-command">../  </code> y en sistemas windows <code class="code-command">  ..\ </code>, pero la especificación que establece que las URLs deben usar barras ("/") en lugar de contrabarras ("") en su estructura es la RFC 3986, titulada "Uniform Resource Identifier (URI): Generic Syntax". Esta RFC describe la sintaxis general de los Identificadores Uniformes de Recursos (URI), que incluyen las URL (Uniform Resource Locators). En la RFC 3986 se detallan las reglas y convenciones para la composición de las URL, y establece que las barras ("/") deben utilizarse como delimitadores en la estructura de las URL . En otras palabras tambien es conveniente probar con <code class="code-command"> ../  </code> en sistemas operavitos Windows.</p>
+    <h3 class="h3-importante">BYPASS</h3>
+
+    <p>En muchas ocaciones el corta fuegos detecta <code class="code-command"> ../  </code> como unos caracteres maliciosos para evadir esta detección podemos usar la codificación de caracteres, codificaremos los puntos en formato ASCI <code class="code-command">%2e   </code> y al final la ruta quedará así:</p>
+    <p><code class="code-command"> %2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd  </code></p>
+    <p>Y huala logramos evadirlo!</p>
+
+  <br><br>
+</main>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="../assets/js/copiar-boton.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+
+</body>
+
+</html>

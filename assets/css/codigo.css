@@ -1,0 +1,51 @@
+.lenguage-python {
+    width: auto;
+    color: aquamarine;
+}
+
+pre {
+    margin: 0;
+    background: #131415;
+    overflow-x: auto; 
+}
+
+.code-container {
+    display: contents; 
+}
+
+code {
+    font-size: 14px;
+    font-family: "Courier New", monospace;
+}
+
+.copy-button {
+    background-color: #0074e4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 15%;
+    margin-left: 85%;
+
+}
+
+.copy-button:hover {
+    background-color: #0052a1;
+}
+
+.code-command {
+    font-family: SFMono-Regular, Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+    background-color: #131415;
+    border-radius: 3px;
+    padding: 1px;
+    color: rgb(235, 87, 87);
+}
+
+
+@media (max-width: 900px){
+    .copy-button {
+        width: 22%;
+        margin-left: 78%;
+    }
+}

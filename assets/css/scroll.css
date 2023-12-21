@@ -1,0 +1,22 @@
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+    
+}
+.feature-card{
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 50% cover 45%;
+    animation-fill-mode: both;
+}
