@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>H4ckdino - Blog</title>
+  <meta name="title" content="H4ckdino - Blog">
+  <meta name="description" content="Blog de hacking etico y material de estudio de informatica">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+  <meta name="author" content="H4ckdino">
+  <meta name="keywords" content="Hacking, Redes, Ciberseguridad, Informatica, Red team, Programación">
+  <meta property="og:title" content="H4ckdino - Blog de Hacking">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+  <meta property="og:url" content="https://y4chi.github.io">
+  <meta property="og:description" content="¡Bienvenidos a H4ckdino, tu portal exclusivo hacia el fascinante mundo del hacking! Sumérgete en un universo de conocimientos cibernéticos, seguridad informática y tecnología punta. Descubre las últimas tendencias, trucos y herramientas que te convertirán en un maestro del ciberespacio. En H4ckdino, desentrañamos los misterios digitales y exploramos el lado audaz de la tecnología. ¡Únete a nuestra comunidad de mentes curiosas y desata tu potencial hacker!">
+  <meta property="og:site_name" content="https://y4chi.github.io/SECTION-MALWARE/keyloggers-eticos.html">
+  <meta property="og:locale" content="es-PE">
+  <meta name="twitter:title" content="H4ckdino - Blog de Hacking">
+  <meta name="twitter:description" content="¡Bienvenidos a H4ckdino, tu portal exclusivo hacia el fascinante mundo del hacking! Sumérgete en un universo de conocimientos cibernéticos, seguridad informática y tecnología punta. Descubre las últimas tendencias, trucos y herramientas que te convertirán en un maestro del ciberespacio. En H4ckdino, desentrañamos los misterios digitales y exploramos el lado audaz de la tecnología. ¡Únete a nuestra comunidad de mentes curiosas y desata tu potencial hacker!">
+  <meta name="twitter:image" content="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+  <meta name="twitter:site" content="https://y4chi.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B2447">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/codigo.css">
+
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+	
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+					
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+    <h1 id="h1-main">ARP Poisoning (Teoria Y Practica)</h1>
+    <h3 class="h3-importante">Teoria</h3>
+    <p>ARP Poisoning es un poderoso ataque ya que puedes interceptar el trafico en una red <br><br>
+
+      El atacante puede manipular las tablas ARP entre un host y el router dentro de una comunicacion, esto permitira hacer un ataque **Man in the middle (MITM)**.<br><br>
+      
+      En un ataque de envenenamiento del ARP, existen tres actores:<br><br>
+      
+      - Dos nodos en la red (clientes, servidores, routers, impresoras,…)<br><br>
+      - El atacante<br><br>
+      
+      El atacante puede manipular la cache dentro de las tablas del ARP de cada host para enviar respuestas “gratuitas” de ARP.<br><br>
+      
+      Estas respuestas “gratuitas” son mensajes ARP sin solicitud, en otras palabras, el atacante envia respuestas sin esperar a que el host realice una solicitud<br><br>
+      
+      El atacante explota mensajes gratuitos de ARP modificando la MAC de un host para engañarlo y hacerse pasar por él.<br><br>
+      
+      Este engaño se le debe de aplicar a las dos victimas.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/arp-poisoning/01.webp" alt="Imagen Redes" />
+      </div>
+  
+      <p>Tan pronto como la tabla de cache ARP contenga la informacion falsa, cada paquete de cada comunicacion entre los dos nodos envenenados se enviaran a la maquina del atacante.<br><br>
+
+        El atacante puede evitar que la entrada envenenada caduque enviando respuestas ARP gratuitas cada 30 segundos más o menos.<br><br>
+        
+        En el momento que el atacante recibe los paquetes, esté los reenvia al destino correcto para no levantar sospechas.<br><br>
+        
+        Esta actividad puede llegar mas lejos ya que el atacante puede cambiar el contenido de los paquetes.<br><br></p>
+        <h3 class="h3-importante">Practica</h3>
+        <p>Dsniff es una coleccion de herramientas para auditoria y pentesting, incluye arpspoof, una utilidad hecha para interceptar el trafico en una red LAN.<br><br>
+
+          Antes de empezar con la herramienta, debemos de activar el “Linux Kernel IP Forwarding", una caracteristica que **transforma un Linux en un router**.<br><br>
+          
+          Para activarlo, le decimos a nuestra maquina que reenvie los paquetes que interceptemos al destinatario real.</p>
+              <div class="code-container">
+  <pre class="lenguage-python">
+  <code>
+    echo 1 > /proc/sys/net/ipv4/ip_forward</code>
+  </pre>
+  </div>
+  <button class="copy-button">Copiar</button>
+<p>Podemos hacer funcionar arpspoof con:</p>
+<div class="code-container">
+  <pre class="lenguage-python">
+  <code>
+    arpspoof -i &#60interface&#62 -t &#60target&#62 -r &#60host&#62</code>
+  </pre>
+  </div>
+  <button class="copy-button">Copiar</button>
+  <p>Si queremos interceptar el trafico entre 192.168.4.11 (cliente) y 192.168.4.16 (servidor) debemos de ejecutar los siguientes comandos:</p>
+
+  <div class="code-container">
+    <pre class="lenguage-python">
+    <code>
+      echo 1 > /proc/sys/net/ipv4/ip_forward
+      arpspoof -i eth0 -t 152.168.4.11 -r 192.168.4.16</code>
+    </pre>
+    </div>
+    <button class="copy-button">Copiar</button>
+    <p>Ahora podemos ejecutar Wireshark e interceptar el trafico.<br><br>
+
+      Si filtramos por HTTP podemos ver las solicitudes POST (inicios de sesion) que se han hecho en las paginas web de la victima.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/arp-poisoning/02.webp" alt="Imagen Redes" />
+      </div>
+    <P>Tambien podemos filtrar por SMB y ver los archivos que ha abierto el usuario en una red compartida.<br>
+
+      En la barra de menus entramos en File &#62 Export Objetcts &#62 SMB/SMB2</P>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/arp-poisoning/03.webp" alt="Imagen Redes" />
+      </div>
+      <p>Nos aparecera una ventana con la lista de objetos (archivos) que se han enviado por la red.</p>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/arp-poisoning/04.webp" alt="Imagen Redes" />
+      </div>
+      <p>Nos centramos en los que su contenido es de tipo “FILE”, lo seleccionamos y le damos al boton “Save as” para guardarlo en nuestro equipo.<br><br>
+
+        Podemos identificarlo con el comando “file” de linux, en este caso es una imagen que la victima ha abierto dentro de su recurso de red.<br></p>
+        <div class="imagenes-blog">
+          <img class="img-contenido-blog" src="./assets/images/articulos/arp-poisoning/05.webp" alt="Imagen Redes" />
+        </div>
+        <div class="imagenes-blog">
+          <img class="img-contenido-blog" src="./assets/images/articulos/arp-poisoning/06.webp" alt="Imagen Redes" />
+        </div>
+        <br><br>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="../assets/js/copiar-boton.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+
+</body>
+
+</html>

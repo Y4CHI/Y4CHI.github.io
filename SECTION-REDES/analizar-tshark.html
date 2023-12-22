@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>H4ckdino - Blog</title>
+  <meta name="title" content="H4ckdino - Blog">
+  <meta name="description" content="Blog de hacking etico y material de estudio de informatica">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+  <meta name="author" content="H4ckdino">
+  <meta name="keywords" content="Hacking, Redes, Ciberseguridad, Informatica, Red team, Programación">
+  <meta property="og:title" content="H4ckdino - Blog de Hacking">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+  <meta property="og:url" content="https://y4chi.github.io">
+  <meta property="og:description" content="¡Bienvenidos a H4ckdino, tu portal exclusivo hacia el fascinante mundo del hacking! Sumérgete en un universo de conocimientos cibernéticos, seguridad informática y tecnología punta. Descubre las últimas tendencias, trucos y herramientas que te convertirán en un maestro del ciberespacio. En H4ckdino, desentrañamos los misterios digitales y exploramos el lado audaz de la tecnología. ¡Únete a nuestra comunidad de mentes curiosas y desata tu potencial hacker!">
+  <meta property="og:site_name" content="https://y4chi.github.io/SECTION-MALWARE/keyloggers-eticos.html">
+  <meta property="og:locale" content="es-PE">
+  <meta name="twitter:title" content="H4ckdino - Blog de Hacking">
+  <meta name="twitter:description" content="¡Bienvenidos a H4ckdino, tu portal exclusivo hacia el fascinante mundo del hacking! Sumérgete en un universo de conocimientos cibernéticos, seguridad informática y tecnología punta. Descubre las últimas tendencias, trucos y herramientas que te convertirán en un maestro del ciberespacio. En H4ckdino, desentrañamos los misterios digitales y exploramos el lado audaz de la tecnología. ¡Únete a nuestra comunidad de mentes curiosas y desata tu potencial hacker!">
+  <meta name="twitter:image" content="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+  <meta name="twitter:site" content="https://y4chi.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B2447">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/contenedor.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/codigo.css">
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+
+</head>
+
+<body id="top">
+  <header class="header">
+		<div class="logo">
+		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		</div>
+	
+		<input type="checkbox" id="toggle">
+		<label for="toggle"><img class="img2"  src="./assets/images/svg/menu.svg" alt="menu"></label>
+	
+	
+		<nav class="navigation">
+			<ul>
+				<li><a href="../index.html"> INICIO </a></li>
+				<li><a href="#"> SEGURIDAD INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
+					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
+					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
+          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+	
+				</ul>
+			</li>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
+					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
+				
+	
+				</ul>
+			</li>
+				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul>
+					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
+					
+				
+	
+				</ul>
+	
+				</li>
+				<li><a href="#"> ACERCA DE </a></li>
+			
+			
+			
+			</ul>
+	
+		</nav>
+
+	</header>
+
+  <main class="main-blog">
+    <h1 id="h1-main">Analizar el tráfico de la red (TShark)</h1>
+    <p>Tshark se utiliza igual que Wireshark, analiza capturas guardadas del tcpdump.<br>
+      Abrir captura
+    </p>
+    <div class="code-container">
+      <pre class="lenguage-python">
+      <code>
+        thsark -r Captura.cap</code>
+      </pre>
+      </div>
+      <button class="copy-button">Copiar</button>
+   <p>Con el parametro “-Y” filtraremos las peticiones:</p> 
+   <h3 class="h3-importante">HTTP por Post</h3>
+   <div class="code-container">
+    <pre class="lenguage-python">
+    <code>
+      thsark -r Captura.cap -Y "http.request.method==POST" 2>/dev/null</code>
+    </pre>
+    </div>
+    <button class="copy-button">Copiar</button>
+    <h3 class="h3-importante">FTP</h3>
+    <div class="code-container">
+     <pre class="lenguage-python">
+     <code>
+      thsark -r Captura.cap -Y "ftp" 2>/dev/null
+     </code>
+     </pre>
+     </div>
+     <button class="copy-button">Copiar</button>
+     <h3 class="h3-importante">Ver datos de un inicio de sesion</h3>
+     <p>Con el parametro -Tjson podemos ver la información en formato json, de esta manera nos facilita encontrar los campos de la información de la data.</p>
+     <p>Nuestro objetivo sera localizar los datos del payload, éste se encuentra en un campo que se llama “tcp.payload”. Los datos vienen en hexadecimal.</p>
+     <div class="code-container">
+      <pre class="lenguage-python">
+      <code>
+        thsark -r Captura.cap -Y "http.request.method==POST" -Tjson 2>/dev/null</code>
+      </pre>
+      </div>
+      <button class="copy-button">Copiar</button>
+      <div class="imagenes-blog">
+        <img class="img-contenido-blog" src="./assets/images/articulos/analizar-tshark/01.webp" alt="Imagen Redes" />
+      </div>
+      <p>Una vez tenemos localizado el payload utilizamos xxd para convertir la información de hexadecimal a un formato legible.</p>
+      <div class="code-container">
+        <pre class="lenguage-python">
+        <code>
+          thsark -r Captura.cap -Y "http.request.method==POST" -Tfields -e tcp.payload 2>/dev/null | xxd -ps -r </code>
+        </pre>
+        </div>
+        <button class="copy-button">Copiar</button>
+        <p>De esta manera, podemos ver un inicio de sesion </p>
+        <div class="imagenes-blog">
+          <img class="img-contenido-blog" src="assets/images/articulos/analizar-tshark/02.webp" alt="Imagen Redes" />
+        </div>    
+        <p>Si la contraseña lleva urlencode podemos utilizar la consola interactiva de PHP        </p>
+        <div class="code-container">
+          <pre class="lenguage-python">
+          <code>
+        php --interactive
+
+        > echo urldecode("contraseña");</code>
+          </pre>
+          </div>
+          <button class="copy-button">Copiar</button>
+        
+
+  </main>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <footer class="footer"> 
+    <div class="izquierda">  
+  
+      <a href="#" id="footer-a"><a href="#">
+        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
+      </a>  © 2023 h4ckdino, Inc. </a>
+      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
+      <a href="#" id="footer-a" >Configuración de cookies</a>
+      <a href="#" id="footer-a" >Politica de privacidad</a>
+      
+  
+      
+    </div>
+  </footer>
+  
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="../assets/js/copiar-boton.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+
+</body>
+
+</html>
