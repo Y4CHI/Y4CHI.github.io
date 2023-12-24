@@ -11,7 +11,6 @@
   -->
   <title>H4ckdino - Blog</title>
   <meta name="title" content="H4ckdino - Blog">
-  <meta name="description" content="Blog de hacking etico y material de estudio de informatica">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,  initial-scale=1.0">
@@ -20,14 +19,14 @@
   <meta property="og:title" content="H4ckdino - Blog de Hacking">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-  <meta property="og:url" content="https://y4chi.github.io">
-  <meta property="og:description" content="¡Bienvenidos a H4ckdino, tu portal exclusivo hacia el fascinante mundo del hacking! Sumérgete en un universo de conocimientos cibernéticos, seguridad informática y tecnología punta. Descubre las últimas tendencias, trucos y herramientas que te convertirán en un maestro del ciberespacio. En H4ckdino, desentrañamos los misterios digitales y exploramos el lado audaz de la tecnología. ¡Únete a nuestra comunidad de mentes curiosas y desata tu potencial hacker!">
-  <meta property="og:site_name" content="https://y4chi.github.io/node.html">
+  <meta property="og:url" content="https://y4chi.github.io/SECTION-PROGRAMACION/gitStrag.html">
+  <meta property="og:description" content="Como crear una app de escritorio de tu web favorita con electron">
+  <meta property="og:site_name" content="y4chi.github.io">
   <meta property="og:locale" content="es-PE">
   <meta name="twitter:title" content="H4ckdino - Blog de Hacking">
   <meta name="twitter:description" content="¡Bienvenidos a H4ckdino, tu portal exclusivo hacia el fascinante mundo del hacking! Sumérgete en un universo de conocimientos cibernéticos, seguridad informática y tecnología punta. Descubre las últimas tendencias, trucos y herramientas que te convertirán en un maestro del ciberespacio. En H4ckdino, desentrañamos los misterios digitales y exploramos el lado audaz de la tecnología. ¡Únete a nuestra comunidad de mentes curiosas y desata tu potencial hacker!">
   <meta name="twitter:image" content="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-  <meta name="twitter:site" content="https://y4chi.github.io">
+  <meta name="twitter:site" content="y4chi.github.io">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0B2447">
 
@@ -117,97 +116,133 @@
 
   <main class="main-blog">
 
-    <h1 id="h1-main"> Como instalar Node en la terminal de Linux usando nvm </h1>
+    <h1 id="h1-main"> Como crear una app de tu web favorita con electron </h1>
 
     <div class="imagenes-blog">
-      <img class="img-contenido-blog" src="./assets/images/articulos/node/001.webp" alt="Imagen HACKTHEBOX" />
+      <img class="img-contenido-blog" src="./assets/images/articulos/electron/001.webp" alt="Imagen HACKTHEBOX" />
     </div>
-    <p> Node.js es un entorno en tiempo de ejecucion multiplataforma para la capa de servidor, orientado en un entorno
-      de ejecucion de javascript con  eventos asìncronos, esta diseñado generalmente para crear aplicaciones escalables , con
-      la cual tambien nos permite gestionar multiples conexiones al mismo tiempo, actualmente muchas marcar reconocidas usan Node.js
-      como Microsoft, Linkedin, Netflix, Ebay, Uber, etc.
+    <h2>¿Qué es Electron?</h2>
+    <p> Electron es un framework para crear aplicaciones de escritorio usando JavaScript, 
+        HTML y CSS. Incrustando Chromium y Node.js dentro del mismo, Electron le permite 
+        mantener una base de código JavaScript y crear aplicaciones multiplataforma que funcionan 
+        en Windows, macOS y Linux, - no requiere experiencia en desarrollo nativo.</p>
     </p>  
-
-      <h2 class="h2">¿Que es nvm? </h2>
-      <p>nvm(Node Version Manager) es un gestor de versiones de Node.Js ,la cual nos permite realizar operacion como desistalar
-        , instalar , cambiar versions de Node.Js. </p>
-
-      <h2 class="h2">Instalacion de Node.js </h2>
-      <p> Primero antes nada tendremos que descargarnos el gestor de versiones de Nodejs para poder escoger nuestra version a instalar e 
-        utilizar.
-      </p>
-      <div class="code-container">
+    <h2>Primeros pasos</h2>
+    <h3>Instalamos nodeJS usando nvm para instalar la version que gustamos instalar </h3>
+    <div class="code-container">
         <pre class="lenguage-python">
-        <code> <br>  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash</code>
+        <code> <br>    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash #Descargamos e instalamos nvm   
+    nvm install --lts #Instalamos la version mas estable de nodeJS
+    nvm use 16.20.2 #Afirmamos que vamos usar esa version exacta </code>
         </pre>
         </div>
-  
-      
-      <p> Despues de habernos descargado en nvm nos la instalamos con los siguientes comandos, con el parametro --lts estamos escogiendo un soporte de largo plazo el Long Term support , la cual es una version
-        que actualmente se encuentra con soporte por un periodo medianamente de mas de 10 meses, tambien podriamos instalarnos una
-        version diferente, con simplemnete reemplazando el "--lts" con la version de NodeJs que deseas instalar.
-      </p>
-      <div class="code-container">
+    <h3>Instalacion de Electron</h3>
+    <div class="code-container">
         <pre class="lenguage-python">
-        <code> <br>  nvm install --lts
-            nvm install 16 #Se instalara la ultima version 16 de Node.js
-          nvm install 16.20.2 #Se instalara la version 16.20.2 de Node.Js</code>
+        <code> <br>    npm install --save-dev electron  #Instalamos Electron en nuestro Host
+    npm install standard -D #Descargamos las dependencias necesarias para evitar errores futuros</code>
         </pre>
         </div>
-          <p> Ya que ahora ya lo tenemos instalado la version en este caso instalamos la version 16.20.2 de NodeJs, asi que solo nos falta
-            configurarlo para usar la version que hemos instalado con un sencillo comando, tambien podremos listar nuestras versiones
-            instaladas.
-          </p>
-        <div class="code-container">
-          <pre class="lenguage-python">
-          <code> <br>    nvm use 16.20.2 # Usamos la version 16.20.2 de Node.js
-    nvm ls #Lista las version de Node instaladas.
-          ->     v18.18.2
-          system
-    default -> lts/* (-> v18.18.2)
-    node -> stable (-> v18.18.2) (default)
-    stable -> 18.18 (-> v18.18.2) (default)
-    iojs -> N/A (default)
-    unstable -> N/A (default)
-    lts/* -> lts/hydrogen (-> v18.18.2)
-    lts/argon -> v4.9.1 (-> N/A)
-    lts/boron -> v6.17.1 (-> N/A)
-    lts/carbon -> v8.17.0 (-> N/A)
-    lts/dubnium -> v10.24.1 (-> N/A)
-    lts/erbium -> v12.22.12 (-> N/A)
-    lts/fermium -> v14.21.3 (-> N/A)
-    lts/gallium -> v16.20.2 (-> N/A)
-    lts/hydrogen -> v18.18.</code>
-          </pre>
-          </div>
-        <h2 class="h2"> Creamos un proyecto en React</h2>
-
-        <p>Despues de hacer todo lo anterior , ya tendremos listo para poder crear nuestro proyecto web, en este caso para probar si
-          todo funciono correctamente nos creamos una aplicacion en react, usando npx que nos facilitara crear nuestro proyecto.
+    
+    <h2>Ya tenemos todo listo para poder comenzar a crear nuestra primera App Desktop </h2>
+    <h3>Crearemos un archivo package.json con los siguiente respectivo codigo </h3>
+    <div class="code-container">
+        <pre class="lenguage-python">
+        <code><br>
+        {
+            "name": "web-app",
+            "version": "1.0.0",
+            "description": "",
+            "main": "main.js",
+            "scripts": {
+              "dev" : "electron .",
+              "test": "echo \"Error: no test specified\" && exit 1"
+            },
+            "keywords": [],
+            "author": "",
+            "license": "ISC",
+            "devDependencies": {
+              "electron": "^27.0.0",
+              "standard": "17.1.0"
+            },
+          
+            "eslintConfig": {
+              "extends":"standard"
+            }
+        }
+          </code>
+        </pre>
+        </div>
+        <h3>Si realizamos los primeros pasos que indicamos, ese archivo se creara automaticamente, si en caso no se creara, deberia de ser
+        identicamente igual a lo mostrado.<br>
+        Ahora nos toca crear nuestra archivo JavaScript con el nombre main.js para que detecte nuestra configuracion que acabamos de realizar.
+        </h3>
+        <p>Importamos el framework a nuestra archivo usando "const" el uso similar al from e import de python , en este caso
+            llamamos a las funciones app, BrowserWindow e importamos Electron.
         </p>
         <div class="code-container">
-          <pre class="lenguage-python">
-          <code> <br>  npx create-react-app MiPrimerProyecto </code>
-          </pre>
-          </div>
-
-        <p> porque no usar npm en vez de npx, la diferencia no es mucha en realidad la 'x' significa execution , asi que lo que hace
-          despues de terminar de crear nuestro proyectos nos ejecuta nuestro proyecto y eso nos facilita la configuracion , asi que ahora
-          solo nos falta ejecutar nuestra aplicacion web.</p>
-          <div class="code-container">
             <pre class="lenguage-python">
-            <code> <br>  cd MiPrimerProyecto #Ingresamos a la carpeta donde se encuentra nuestros archivos
-  npm start #Ejecutamos nuestra aplicacion y nos crea un servidor en puerto 3000  </code>
+            <code><br>  const { app, BrowserWindow } = require('electron')</code>
             </pre>
             </div>
-            <p>El resultado despues de ejecutar nuestra aplicacion sera lo siguiente, despues de eso , ya podras trabajar en tu
-              propio portafolio o en alguna aplicacion web.
-            </p>
-            <div class="imagenes-blog">
-              <img class="img-contenido-blog" src="./assets/images/articulos/node/002.webp" alt="Imagen HACKTHEBOX" />
+        
+        <p>Ahora creamos una variable llamada CreateWindow y hacemos el codigo para configurar el ancho y la alto que deseamos que 
+            tenga nuestra App , en este caso le dimos 800px de ancho y 600 de alto y luego dentro de "win.loadURL()" ingresamos la url 
+            que deseamos tener como una App en este caso sera https://www.cuevana3.eu/.
+        </p>
+        <div class="code-container">
+            <pre class="lenguage-python">
+            <code> 
+        const createWindow = () => {
+            const win = new BrowserWindow({
+              width: 800,
+              height: 600
+            })
+            win.loadURL('https://www.cuevana3.eu/')
+        }</code>
+            </pre>
             </div>
-            
-</main>
+        <p>Ya tenemos ya casi todo listo para tener crear nuestra primera aplicacion de escritorio, lo que nos toca hacer Ahora
+            es hacer que nos muestre en la pantalla, llamandolo y usando la funcion de App que nos traimos de Electron
+        </p>
+        <div class="code-container">
+            <pre class="lenguage-python">
+            <code>
+         app.whenReady().then(() => {
+          createWindow()
+         })</code>
+            </pre>
+            </div>
+        <p>El codigo completo deberia de ser asi </p>
+        <div class="code-container">
+            <pre class="lenguage-python">
+            <code>
+            const { app, BrowserWindow } = require('electron')
+
+            const createWindow = () => {
+                const win = new BrowserWindow({
+                  width: 800,
+                  height: 600
+                  })
+                  win.loadURL('https://www.cuevana3.eu/')
+                }          
+            app.whenReady().then(() => {
+                  createWindow()
+            })</code>
+            </pre>
+            </div>
+        <p>Listo ahora tenemos todo preparado para poder correr nuestra primera app con el siguiente comando :</p>
+        <div class="code-container">
+            <pre class="lenguage-python">
+            <code>
+        npm run dev</code>
+            </pre>
+            </div>
+        <p>Listo ya tendremos nuestra primera App Desktop creada , ahora lo podremos usar cuando nosotros deseamos , si desean
+            simplemente probarlo se encuentra en nuestro github: https://github.com/Y4CHI/WebApp-Builder , lo pueden clonar e hacer
+            los pasos que se le indican en el readme.md.
+        </p>
+    <main>
 
 
   <!-- 

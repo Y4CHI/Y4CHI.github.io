@@ -2,7 +2,14 @@
 <html lang="en">
 
 <head>
-  <title>H4ckdino - Wifi</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>H4ckdino - Blog</title>
   <meta name="title" content="H4ckdino - Blog">
   <meta name="description" content="Blog de hacking etico y material de estudio de informatica">
   <meta charset="UTF-8">
@@ -15,7 +22,7 @@
   <meta property="og:image" content="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
   <meta property="og:url" content="https://y4chi.github.io">
   <meta property="og:description" content="¡Bienvenidos a H4ckdino, tu portal exclusivo hacia el fascinante mundo del hacking! Sumérgete en un universo de conocimientos cibernéticos, seguridad informática y tecnología punta. Descubre las últimas tendencias, trucos y herramientas que te convertirán en un maestro del ciberespacio. En H4ckdino, desentrañamos los misterios digitales y exploramos el lado audaz de la tecnología. ¡Únete a nuestra comunidad de mentes curiosas y desata tu potencial hacker!">
-  <meta property="og:site_name" content="https://y4chi.github.io/index.html">
+  <meta property="og:site_name" content="https://y4chi.github.io/node.html">
   <meta property="og:locale" content="es-PE">
   <meta name="twitter:title" content="H4ckdino - Blog de Hacking">
   <meta name="twitter:description" content="¡Bienvenidos a H4ckdino, tu portal exclusivo hacia el fascinante mundo del hacking! Sumérgete en un universo de conocimientos cibernéticos, seguridad informática y tecnología punta. Descubre las últimas tendencias, trucos y herramientas que te convertirán en un maestro del ciberespacio. En H4ckdino, desentrañamos los misterios digitales y exploramos el lado audaz de la tecnología. ¡Únete a nuestra comunidad de mentes curiosas y desata tu potencial hacker!">
@@ -23,17 +30,34 @@
   <meta name="twitter:site" content="https://y4chi.github.io">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0B2447">
+
+  <!-- 
+    - favicon
+  -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - custom css link
+  -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/contenedor.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/codigo.css">
+
+  <!-- 
+    - preload images
+  -->
   <link rel="preload" as="image" href="./assets/images/hero-banner.png">
   <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
   <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
@@ -41,6 +65,10 @@
 </head>
 
 <body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
   <header class="header">
 		<div class="logo">
 		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
@@ -59,11 +87,9 @@
 					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
 					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
           <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
-
-	
 				</ul>
 			</li>
-        <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
 				<ul>
 					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
 					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
@@ -75,7 +101,6 @@
 				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
 				<ul>
 					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
-					
 				
 	
 				</ul>
@@ -83,8 +108,7 @@
 				</li>
 				<li><a href="#"> ACERCA DE </a></li>
 			
-			
-			
+	
 			</ul>
 	
 		</nav>
@@ -93,37 +117,78 @@
 
   <main class="main-blog">
 
-    <h1 id="h1-main">Ataque de Deautenticación dirigido</h1>
-    <P>
-      Un "ataque de desautenticación dirigido" en el contexto de la prueba de penetración (pentesting) de redes WiFi se refiere a un intento deliberado de desconectar a un usuario o dispositivo específico de una red inalámbrica al enviar paquetes de desautenticación falsos. Este tipo de ataque se utiliza para forzar a un dispositivo a desconectarse de una red WiFi legítima y, posiblemente, a intentar volver a conectarse.</P>
-    
-    <p>Primeros identificamos que dispositivo vamos a desautenticas que este más activo, en este caso aremos uso del frame para poder ver cual es el más activo</p>
-    <div class="imagenes-blog">
-      <img class="img-contenido-blog" src="assets/images/articulos/ataque-de.deautenticacion-dirigido/ataque-de.deautenticacion-dirigido-001.png" alt="Imagen hacking wifi" />
-    </div>
-    <p>Ejecutamos el siguiente comando para hacer el ataque de deatenticación dirigido</p>
-    <div class="imagenes-blog">
-      <img class="img-contenido-blog" src="assets/images/articulos/ataque-de.deautenticacion-dirigido/ataque-de.deautenticacion-dirigido-002.png" alt="Imagen hacking wifi" />
-    </div>
-    <p><code class="code-command">aireplay-ng -0 10 -e JEXXXXX -c EC:A1:D1:XX:XX:XX wlan0mon</code></p>
-    <p><code class="code-command">-0</code> es el tipo de ataque que haremos</p>
-    <p><code class="code-command">10</code> es el numero de paquetes que queremos enviar</p>
-    <p><code class="code-command">-e</code> es el nombre del ESSID</p>
-    <p><code class="code-command">-c</code> especificamos la mac del dispositivo a deatenticar</p>
-
-    <p>Si agregamos un 0 en el numero de paquetes que deseamos enviar nosotros estaremos enviando un numero ilimitado de paquetes que podremos parar con <code class="code-command">ctrl + c</code></p>
+    <h1 id="h1-main"> Como crear entornos virtuales con python </h1>
 
     <div class="imagenes-blog">
-      <img class="img-contenido-blog" src="assets/images/articulos/ataque-de.deautenticacion-dirigido/ataque-de.deautenticacion-dirigido-003.png" alt="Imagen hacking wifi" />
+      <img class="img-contenido-blog" src="./assets/images/articulos/python3env/001.webp" alt="Imagen HACKTHEBOX" />
     </div>
-    <p>Al finalizar la emición de paquetes podemos observar el HandShake</p>
-    <p>Si agregamos un 0 en el numero de paquetes que deseamos enviar nosotros estaremos enviando un numero ilimitado de paquetes que podremos parar con <code class="code-command">ctrl + c</code></p>
-    <br>
+    <h2>Porque es importante crear entornos virtuales con python ?</h2>
+    <p> Trabajar en un entorno virtual , nos permite mejorar nuestra seguridad al ejecutar scripts  , y 
+        tambien nos permite instalar las dependencias desde cero, para mejorar nuestra productividad , 
+        ya que nuestro entorno virtual estara sin librerias y solo las necesarias para funcionar.</p>
+    </p>  
+    <h2>Instalacion</h2>
+    <div class="code-container">
+        <pre class="lenguage-python">
+        <code><br>    sudo apt-get update
+    $sudo apt-get install python(version)</code>
+        </pre>
+        </div>
 
+      <h2>Paso 1</h2>
+      <p>Creamos el entorno virtual y lo guardamos todas nuestras librerias y dependencias en el 
+        archivo .venv</p>
+        <div class="code-container">
+            <pre class="lenguage-python">
+            <code> <br>     python3 -m venv .env</code>
+            </pre>
+            </div>
+      
 
+      <h2 class="h2">Paso 2</h2>
+      <p>Despues de haber hecho lo anterior , debemos activar el entorno virtual  y ya estara 
+        listo para trabajar, si desean desactivar el entorno virtual en la terminal : 
+        <code>Deactivate</code></p>
+      <div class="code-container">
+        <pre class="lenguage-python">
+        <code> <br>     source /route/activate</code>
+        </pre>
+        </div>
+  
+      <h2>Paso 3</h2>
+      <p>Despues de haber realizado todo lo anterior ,para comprobar si hemos realizado todo correctamente
+        revisamos las librerias que tenemos con el siguiente comando: </p>
+      <div class="code-container">
+        <pre class="lenguage-python">
+        <code> <br>     pip list
+     Package    Version
+     ---------- -------
+     pip        23.3
+     setuptools 68.1.2</code>
+        </pre>
+        </div>
+        <p>Si los resultados son algo parecido , ya se encontrara en entorno de trabajo virtual y podra realizar su
+            proyecto sin problemas
+        </p>
+      
+      <h2>Comandos extras</h2>   
+          <p>Crear un archivo con todas las dependencias para usarlo en otro momento</p>
+        <div class="code-container">
+          <pre class="lenguage-python">
+          <code> <br>     pip freeze > requirements.txt</code>
+          </pre>
+          </div>
+        
+        
+        <p>Para instalar dependencias necesarias de un archivo de texto del proyecto</p>
+        <div class="code-container">
+          <pre class="lenguage-python">
+          <code> <br>      pip install -r requirements.txt </code>
+          </pre>
+          </div>
 
-    
-
+        
+            
 </main>
 
 
@@ -139,13 +204,11 @@
       <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
       <a href="#" id="footer-a" >Configuración de cookies</a>
       <a href="#" id="footer-a" >Politica de privacidad</a>
-      
-  
-      
+    
     </div>
   </footer>
   
-
+  
 
 
 

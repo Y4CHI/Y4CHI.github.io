@@ -1,8 +1,8 @@
 from PIL import Image
 
-for i in range(2,4):
+for i in range(1,2):
     numero = str(i)
-    numero_formateado = "node2" + ".png"
+    numero_formateado = f"00{i}" + ".jpg"
     imagen_png = Image.open(numero_formateado)
-    imagen_png.save("001" + ".webp", 'webp')
+    imagen_png.save(f"00{i}" + ".webp", 'webp')
     print(f"Convertido: {numero_formateado}")
