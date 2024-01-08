@@ -1,65 +1,27 @@
-
-
 .header{
-    position: fixed;
-    height: 70px;
-    top: 0;
-    left: 0;
-    right: 0;
-    background:#202c40 ;
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-        justify-content: space-between;
-        z-index: 1000;
-    }
-    
-    .logo{
-        font-size: 25px;
-        text-transform: uppercase;
-        color: azure;
-        font-weight: 700;
-    }
-    
-    
-    .navigation ul {
-        list-style: none;
-    }
-    
-    .header .navigation ul li {
-        float: left;
-        position: relative;
-    }
-    
-    .header .navigation ul li a {
-        font-size: 18px;
-        color: rgb(253, 255, 255);
-        text-decoration: none;
-        padding: 20px;
-        display: block;
-        transition: all .2s ease;
-    }
+    background: #202c40;
+}
+
+.header .navigation ul li a {
+    color: white;
+    padding: 17px;
+    font-size: 18px;
+    transition: all .2s ease;
+}
+
     .header .navigation ul li a:hover{
-        background-color: brown;
+        background: rgba(11, 92, 197, 0.623);
     
     }
-    
-    
+
     .header .navigation ul li ul {
-        position: absolute;
-        right: 0;
-        width: auto;
         background-color: #202c40;
         display: none;
         border-radius: 0px 0px 15px 15px;
     }
     
     .header .navigation ul li ul li a {
-        display: flex;
-        justify-content: center;
         font-size: 15px;
-        text-transform: capitalize;
-        border-radius: 14px;
     }
     
     .header .navigation ul li ul li ul{
@@ -83,10 +45,7 @@
     }
     
     .logo1{
-        width: 27vh;
-        height: 9vh;
         margin-left: 7vh;
-        margin-right: 0px;
     }
     
     @media(max-width: 1050px){

@@ -60,17 +60,14 @@
   <link rel="preload" as="image" href="./assets/images/hero-banner.png">
   <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
   <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
-
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body id="top">
 
-  <!-- 
-    - #HEADER
-  -->
-  <header class="header">
+  <header class="header h-24 top-0 left-0 right-0 flex justify-between items-center z-10 fixed">
 		<div class="logo">
-		<img class="logo1" src="./assets/images/logo/menor4.png" alt="">
+		<img class="logo1 w-64 h-auto" src="./assets/images/logo/menor4.png" alt="">
 		</div>
 	
 		<input type="checkbox" id="toggle">
@@ -78,42 +75,31 @@
 	
 	
 		<nav class="navigation">
-			<ul>
-				<li><a href="../index.html"> INICIO </a></li>
-				<li><a href="#"> HACKING ETICO <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
-				<ul>
-					<li><a href="../SECTON-HACKING-WIFI/index.html">HACKING WIFI</a></li>
-					<li><a href="../SECTION-HACKING-WEB/index.html">HACKING WEB</a></li>
-					<li><a href="../SECTION-MALWARE/index.html">MALWARE</a></li>
-          <li><a href="../SECTION-BYPASS/index.html">BYPASS</a></li>
+			<ul class="list-none">
+				<li class="float-left relative"><a href="../index.html"> INICIO </a></li>
+				<li class="float-left relative"><a href="../SECTON-HACKING-WIFI/index.html"> HACKING ETICO <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul class="absolute right-0 w-auto ">
+					<li class="float-left relative"><a class="flex justify-center rounded-2xl" href="index.html">HACKING WIFI</a></li>
+					<li class="float-left relative"><a class="flex justify-center rounded-2xl" href="../SECTION-MALWARE/index.html">MALWARE</a></li>
 				</ul>
 			</li>
-      <li><a href="#"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
-				<ul>
-					<li><a href="../SECTION-LINUX/index.html">LINUX</a></li>
-					<li><a href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
-					<li><a href="../SECTION-REDES/index.html">REDES</a></li>
-				
-	
+				<li class="float-left relative"><a href="../SECTION-REDES/index.html"> INFORMATICA <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
+				<ul class="absolute right-0 w-auto">
+					<li class="float-left relative"><a class="flex justify-center rounded-2xl" href="../SECTION-PROGRAMACION/index.html">PROGRAMACIÓN</a></li>
+					<li class="float-left relative"><a class="flex justify-center rounded-2xl" href="../SECTION-REDES/index.html">REDES</a></li>
 				</ul>
 			</li>
-				<li><a href="">CTF <i class=" fa-sharp fa-solid fa-caret-down"></i></a>
-				<ul>
-					<li><a href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
-				
-	
+				<li class="float-left relative"><a> CTF <i class="fa-solid fa-caret-down"></i></a>
+				<ul class="absolute right-0 w-auto" >
+					<li class="float-left relative"><a class="flex justify-center rounded-2xl" href="../SECTION-HACKTHEBOX/index.html">HACKTHEBOX</a></li>
 				</ul>
 	
 				</li>
-				<li><a href="#"> ACERCA DE </a></li>
-			
-	
+				<li class="float-left relative"><a href="#"> ACERCA DE </a></li>	
 			</ul>
-	
 		</nav>
 
 	</header>
-
   <main class="main-blog">
 
     <h1 id="h1-main"> Una estrategia de ramificación moderna con Git : Ship / Show / Ask  </h1>
@@ -190,24 +176,20 @@
   <!-- 
     - #BACK TO TOP
   -->
-  <footer class="footer"> 
-    <div class="izquierda">  
-  
-      <a href="#" id="footer-a"><a href="#">
-        <img src="../assets/images/logo/menorH.png" alt="logo h4ckdino">
-      </a>  © 2023 h4ckdino, Inc. </a>
-      <a href="#" id="footer-a">Ponte en contacto con nosotros</a>
-      <a href="#" id="footer-a" >Configuración de cookies</a>
-      <a href="#" id="footer-a" >Politica de privacidad</a>
+ <!--footer-->
+ <footer class="footer "> 
+  <div class="izquierda text-center	">  
+
+    <a class="block text-center mt-1 ml-0.5	text-xl" href="#" id="footer-a"><a href="#">
+      <img class="h-8 mr-auto ml-auto" src="./assets/images/logo/menorH.png" alt="logo h4ckdino">
+    </a>© 2023 h4ckdino, Inc. </a>
+    <a href="#" class="footer-a no-underline font-bold text-xl" >Configuración de cookies</a>
+    <a href="#" class="footer-a no-underline font-bold text-xl" >Politica de privacidad</a>
     
-    </div>
-  </footer>
-  
-  
 
-
-
-
+    
+  </div>
+</footer>
   <!-- 
     - custom js link
   -->

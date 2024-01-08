@@ -137,15 +137,7 @@
   a {
     color: inherit;
     text-decoration: none;
-  }
-  
-  img { 
-    height: 32px;
-    margin-right: auto;
-    margin-left: auto;
-   
-  }
-  
+  }  
   input,
   button {
     background: none;

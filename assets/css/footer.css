@@ -1,8 +1,5 @@
 /* Estilos generales del footer */
 .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     background-color:   hsla(222, 47%, 11%, 1);
     padding: 20px;
     color: white;
@@ -20,7 +17,6 @@
   }
   .izquierda, .derecha {
     flex: 1;
-    text-align: center;
   }
   .izquierda .imagen-titulo {
     text-align: center; 
@@ -31,11 +27,8 @@
     margin-bottom: 10px;
   }
   
-  #footer-a{
-    text-decoration: none; 
+  .footer-a{
     color: white; 
-    font-weight: bold; 
-    font-size: 15px; 
     transition: background-color 0.3s, color 0.3s; 
   }
   #footer-a:hover{
@@ -48,15 +41,7 @@
     margin-top: 0.3em;
     margin-left: 0.3em;
   }
-  
-  .derecha a {
-    top: 10vh;
-    display: block; 
-    text-align: center; 
-    margin-top: 0.7em;
-    margin-left: 1.1em;
-  }
-  
+
   /* Media Query para hacer que el footer sea responsivo */
   @media screen and (max-width: 768px) {
     .footer {
@@ -71,97 +56,7 @@
     }
   
   }
-  
-  /* section1 ---------------------------*/
-  
-  .nuestros_servicios{
-      padding: 0;
-  }
-  
-  .section1 {
-      background-color: #c1efec;
-      display: flex;  
-      width: 100%;
-  }
-  
-  .texto {
-      flex: 1;
-      padding: 9.5em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-  .texto h1{
-      font-size: 3em;
-      color:goldenrod;
-    }
-  .texto p{
-      font-size: 1.6em;
-      color: grey;
-      font-weight: bold
-    }
-  
-  .imagen {   
-      flex: 1;
-      padding: 0px;
-      text-align: center;
-    }
-  .imagen img {    
-      max-width: 60%;
-      max-height: 75%;
-      padding-top: 30px;
-      padding-bottom: 30px;
-  }
-  
-  /* medias queris de section1 */
-  
-  @media (max-width: 1800px){
-    .texto{
-      padding: 2em;
-      padding-left: 105px;
-    }  
-  }
-  
-  @media (max-width: 1233px){
-    .texto{
-    padding: 2em;
-    padding-left: 85px;
-    }
-  }
-  
-  @media screen and (max-width: 843px) {
-  
-    .section1 {
-      flex-direction: column;
-    }
-    
-    .texto, .imagen {
-      flex: 1;
-      padding: 20px;
-      text-align: center;
-      max-width: 100%;
-      max-height: 50%;
-    }
-    .texto h1{
-      font-size: 2em
-    }
-    .texto p{
-      font-size: 1em
-    }
-  
-  }
-  
-  @media (max-width: 1365px){
-    .texto h1{
-      font-size: 2.2em
-    }
-    .texto p{
-      font-size: 1.2em
-    }
-  
-  }
-  
-  
+   
   /* media query del footer */
   
   @media screen and (max-width: 850px) {
@@ -170,24 +65,3 @@
       }  
   }
   
-  /* Section - servicios */
-    @media screen and (max-width:650px){
-  
-      .servicio-cont{
-        justify-content: center;
-        flex-direction: column;
-    }
-  
-    .servicio{
-        width: 86%;
-        text-align: center;
-    }
-  
-    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
-        margin-bottom: 60px;
-    }
-  
-    .servicio-ind img{
-        width: 75%;
-    }
-  }
